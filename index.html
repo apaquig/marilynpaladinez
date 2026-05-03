@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="stylesheet" href="/css/styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MAPA Business & Financial Services LLC | Estratega Financiera para Migrantes</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="MAPA Business & Financial Services LLC — Estratega Financiera para Migrantes en Newark, NJ. Trámites migratorios, LLC, contabilidad, crédito, seguros y más. Llama al (862) 622-8339." />
+<meta name="keywords" content="servicios financieros migrantes, trámites migratorios Newark NJ, LLC hispanos Nueva Jersey, notaria publica Newark, crédito para migrantes" />
+<meta name="author" content="Marilyn Paladinez" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="MAPA Business & Financial Services LLC" />
+<meta property="og:description" content="Estratega Financiera para Migrantes. Confianza, estrategia y resultados. Newark, NJ · (862) 622-8339" />
+<meta property="og:image" content="/src/marilin2.png" />
+<meta property="og:url" content="https://mapabfs.com" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ══════════════════════════════════════
+   NAVBAR STICKY GLASSMORPHISM
+══════════════════════════════════════ */
+nav {
+  transition: background 0.4s ease, box-shadow 0.4s ease !important;
+}
+nav.scrolled {
+  background: rgba(8, 8, 8, 0.93) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  box-shadow: 0 2px 40px rgba(0,0,0,0.55) !important;
+}
+
+/* ══════════════════════════════════════
+   HERO ANIMATIONS
+══════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.hero-tag      { animation: fadeUp 0.65s ease both; animation-delay: 0.1s; }
+.hero-text h1  { animation: fadeUp 0.65s ease both; animation-delay: 0.25s; }
+.hero-subtitle { animation: fadeUp 0.65s ease both; animation-delay: 0.4s; }
+.hero-badges   { animation: fadeUp 0.65s ease both; animation-delay: 0.55s; }
+.hero-buttons  { animation: fadeUp 0.65s ease both; animation-delay: 0.7s; }
+.hero-social-anim { animation: fadeUp 0.65s ease both; animation-delay: 0.85s; }
+.hero-image-wrap  { animation: slideRight 0.85s ease both; animation-delay: 0.2s; }
+
+/* ══════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.rv1 { transition-delay: 0.08s; }
+.rv2 { transition-delay: 0.18s; }
+.rv3 { transition-delay: 0.28s; }
+.rv4 { transition-delay: 0.38s; }
+
+/* ══════════════════════════════════════
+   SERVICE CARD HOVER UPGRADE
+══════════════════════════════════════ */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+  border: 1px solid transparent !important;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220,38,38,0.07), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.service-card:hover {
+  transform: translateY(-7px) !important;
+  box-shadow: 0 22px 52px rgba(0,0,0,0.38) !important;
+  border-color: rgba(220,38,38,0.28) !important;
+}
+.service-card:hover::after { opacity: 1; }
+.service-icon {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.service-card:hover .service-icon { transform: scale(1.2) rotate(-5deg); }
+
+/* ══════════════════════════════════════
+   ABOUT FEATURE CARDS
+══════════════════════════════════════ */
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+  margin: 22px 0 28px;
+}
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 13px 15px;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  cursor: default;
+}
+.feature-card:hover {
+  background: rgba(220,38,38,0.09);
+  border-color: rgba(220,38,38,0.28);
+  transform: translateY(-2px);
+}
+.feature-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 1px; }
+.feature-text {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Lato', sans-serif;
+}
+.feature-text strong {
+  display: block;
+  font-size: 0.86rem;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1px;
+}
+@media (max-width: 520px) { .about-features { grid-template-columns: 1fr; } }
+
+/* ══════════════════════════════════════
+   TESTIMONIALS SLIDER
+══════════════════════════════════════ */
+.testi-slider-wrap { overflow: hidden; }
+.testi-track {
+  display: flex;
+  transition: transform 0.52s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
+}
+.testi-track .testimonial-card {
+  flex: 0 0 calc(33.333% - 16px);
+  margin-right: 24px;
+  box-sizing: border-box;
+}
+@media (max-width: 880px) {
+  .testi-track .testimonial-card { flex: 0 0 calc(50% - 12px); }
+}
+@media (max-width: 560px) {
+  .testi-track .testimonial-card { flex: 0 0 100%; margin-right: 0; }
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 36px;
+}
+.slider-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.22s, border-color 0.22s, transform 0.22s;
+}
+.slider-btn:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  transform: scale(1.08);
+}
+.slider-dots { display: flex; gap: 8px; }
+.s-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  padding: 0;
+}
+.s-dot.active { background: #dc2626; transform: scale(1.35); }
+
+/* ══════════════════════════════════════
+   FORM SUCCESS STATE
+══════════════════════════════════════ */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 52px 28px;
+  animation: fadeIn 0.5s ease;
+}
+.form-success.show { display: block; }
+.success-icon { font-size: 3.5rem; margin-bottom: 16px; }
+.success-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.success-msg {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.93rem;
+  line-height: 1.65;
+  margin-bottom: 26px;
+}
+.success-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #fff;
+  padding: 13px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.success-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.38); }
+
+/* Input focus states */
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: rgba(220,38,38,0.65) !important;
+  box-shadow: 0 0 0 3px rgba(220,38,38,0.13) !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* ══════════════════════════════════════
+   SOCIAL MEDIA BUTTONS
+══════════════════════════════════════ */
+.social-links { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.social-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 17px; border-radius: 50px;
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.81rem;
+  text-decoration: none; white-space: nowrap;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+.social-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(0,0,0,0.32); filter: brightness(1.1); }
+.social-btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+
+.social-btn-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%; text-decoration: none;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+.social-btn-icon:hover { transform: translateY(-3px) scale(1.08); box-shadow: 0 8px 24px rgba(0,0,0,0.4); filter: brightness(1.1); }
+.social-btn-icon svg { width: 20px; height: 20px; }
+
+.social-facebook  { background: #1877F2; color: #fff; }
+.social-instagram { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; }
+.social-tiktok    { background: #010101; color:#fff; border:1px solid #2a2a2a; }
+.social-youtube   { background: #FF0000; color:#fff; }
+
+.contact-social-area { margin-top:30px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.09); }
+.contact-social-area p {
+  font-size: 0.78rem; color: rgba(255,255,255,0.42); margin-bottom:13px;
+  font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1.5px;
+}
+.footer-social { display:flex; gap:12px; justify-content:center; margin:18px 0; }
+
+/* ══════════════════════════════════════
+   HAMBURGER ANIMATED
+══════════════════════════════════════ */
+.hamburger span {
+  display: block; width:24px; height:2px; background:#fff;
+  margin:5px 0; border-radius:2px;
+  transition: transform 0.32s ease, opacity 0.32s ease;
+  transform-origin: center;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/18626228339?text=Hola%20Marilyn%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios." target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 1C7.716 1 1 7.716 1 16c0 2.628.68 5.1 1.872 7.25L1 31l7.95-1.85A14.952 14.952 0 0016 31c8.284 0 15-6.716 15-15S24.284 1 16 1zm0 27.5a12.46 12.46 0 01-6.37-1.75l-.456-.27-4.72 1.1 1.12-4.6-.3-.47A12.44 12.44 0 013.5 16C3.5 9.096 9.096 3.5 16 3.5S28.5 9.096 28.5 16 22.904 28.5 16 28.5zM22.34 19.1c-.34-.17-2.01-1-2.33-1.1-.32-.12-.56-.17-.79.17s-.9 1.1-1.1 1.34-.41.25-.76.08c-.34-.17-1.45-.54-2.76-1.72a10.3 10.3 0 01-1.91-2.4c-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.22-.34.34-.57.11-.22.06-.42-.03-.59-.08-.17-.79-1.9-1.08-2.6-.28-.68-.57-.59-.79-.6h-.68c-.22 0-.59.08-.9.4-.31.32-1.18 1.15-1.18 2.8s1.21 3.25 1.38 3.47c.17.22 2.38 3.64 5.77 5.1.81.35 1.44.56 1.93.72.81.26 1.55.22 2.13.13.65-.1 2.01-.82 2.29-1.62.28-.79.28-1.47.2-1.62-.09-.14-.33-.22-.68-.39z"/>
+  </svg>
+</a>
+
+<!-- NAVBAR -->
+<nav id="mainNav">
+  <div class="nav-logo">M<span>A</span>PA</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#hero">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="https://wa.me/18626228339" target="_blank" class="nav-cta">📞 Cita</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">✦ Estratega Financiera para Migrantes</div>
+      <h1>Te ayudo a organizar<br><span class="red">tus trámites</span><br>y finanzas</h1>
+      <p class="hero-subtitle">MAPA Business & Financial Services LLC — Confianza, estrategia y resultados para tu comunidad. ¡Encontramos el camino para tus finanzas!</p>
+      <div class="hero-badges">
+        <span class="hero-badge">✓ Confianza</span>
+        <span class="hero-badge">✓ Estratégia</span>
+        <span class="hero-badge">✓ Resultados</span>
+        <span class="hero-badge">✓ Notaria Pública</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn btn-red">📅 Agenda tu cita</a>
+        <a href="https://wa.me/18626228339?text=Hola%20Marilyn%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" class="btn btn-whatsapp">💬 WhatsApp</a>
+        <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+      </div>
+      <div class="social-links hero-social-anim" style="margin-top:28px;">
+        <a href="https://www.facebook.com/profile.php?id=61550670802804" target="_blank" rel="noopener" class="social-btn social-facebook" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.instagram.com/marilynpaladinezusa/" target="_blank" rel="noopener" class="social-btn social-instagram" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.tiktok.com/@marilynpaladinezv" target="_blank" rel="noopener" class="social-btn social-tiktok" aria-label="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+          TikTok
+        </a>
+        <a href="https://www.youtube.com/@MarilynPaladinezOficial" target="_blank" rel="noopener" class="social-btn social-youtube" aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="/src/marilin2.png" alt="Marilyn Paladinez — Estratega Financiera" />
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item reveal rv1"><span class="stat-num">500+</span><span class="stat-label">Clientes atendidos</span></div>
+  <div class="stat-item reveal rv2"><span class="stat-num">10+</span><span class="stat-label">Años de experiencia</span></div>
+  <div class="stat-item reveal rv3"><span class="stat-num">6</span><span class="stat-label">Áreas de servicio</span></div>
+  <div class="stat-item reveal rv4"><span class="stat-num">98%</span><span class="stat-label">Satisfacción</span></div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-inner">
+    <div class="section-tag reveal">Nuestros Servicios</div>
+    <h2 class="section-title reveal rv1">Todo lo que <span>necesitas</span><br>en un solo lugar</h2>
+    <p class="section-desc reveal rv2">Ofrecemos soluciones integrales para migrantes y emprendedores en los Estados Unidos.</p>
+    <div class="services-grid">
+      <div class="service-card reveal rv1">
+        <span class="service-icon">📋</span>
+        <h3>MAPA Migratorio & Notaría</h3>
+        <p>Ajuste de estatus, permisos de trabajo (I-765), peticiones familiares, trámites de inmigración y servicios de Notaría Pública.</p>
+        <a href="#contacto" class="service-link">Solicitar →</a>
+      </div>
+      <div class="service-card reveal rv2">
+        <span class="service-icon">💼</span>
+        <h3>MAPA Corporativo & Emprendimiento</h3>
+        <p>Creación de empresas (LLC), registros, obtención de EIN y consultoría estratégica para nuevos emprendedores.</p>
+        <a href="#contacto" class="service-link">Solicitar →</a>
+      </div>
+      <div class="service-card reveal rv3">
+        <span class="service-icon">📊</span>
+        <h3>MAPA Contable (Pre-Tax)</h3>
+        <p>Bookkeeping mensual, estados financieros y preparación de libros contables para asegurar cumplimiento fiscal futuro.</p>
+        <a href="#contacto" class="service-link">Solicitar →</a>
+      </div>
+      <div class="service-card reveal rv1">
+        <span class="service-icon">📣</span>
+        <h3>MAPA Marketing Digital</h3>
+        <p>Branding, gestión de publicidad pagada (Ads) y creación de estrategias de contenido para negocios.</p>
+        <a href="#contacto" class="service-link">Solicitar →</a>
+      </div>
+      <div class="service-card reveal rv2">
+        <span class="service-icon">🛡️</span>
+        <h3>MAPA Protección & Crédito</h3>
+        <p>Seguros de auto, salud y vida, junto con estrategias de reparación de crédito para construcción de crédito para compra de activos.</p>
+        <a href="#contacto" class="service-link">Solicitar →</a>
+      </div>
+      <div class="service-card reveal rv3">
+        <span class="service-icon">🏠</span>
+        <h3>MAPA Home & Wealth Building</h3>
+        <p>Acompañamiento para comprar tu casa y construir patrimonio para tu futuro financiero.</p>
+        <a href="#contacto" class="service-link">Solicitar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="nosotros">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="/src/marilin.png" alt="Marilyn Paladinez" />
+        <div class="about-card"><span class="num">10+</span><span class="label">Años de experiencia</span></div>
+      </div>
+      <div class="about-text reveal rv2">
+        <div class="section-tag">Sobre Nosotros</div>
+        <h2 class="section-title">Marilyn <span>Paladinez</span><br>Tu aliada financiera</h2>
+        <p class="section-desc">Soy Marilyn Paladinez, Estratega Financiera para Migrantes. Mi misión es ayudarte a navegar el sistema financiero y migratorio de los Estados Unidos con confianza, claridad y estrategia. En MAPA creemos que cada persona merece una hoja de ruta hacia su estabilidad y crecimiento.</p>
+        <div class="about-features">
+          <div class="feature-card">
+            <span class="feature-icon">🌎</span>
+            <div class="feature-text"><strong>Comunidad Hispana</strong>Especialista en finanzas para migrantes latinos</div>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">⚖️</span>
+            <div class="feature-text"><strong>Notaria Pública</strong>Certificada en New Jersey</div>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📋</span>
+            <div class="feature-text"><strong>Trámites Migratorios</strong>Experta en procesos corporativos</div>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">👨‍👩‍👧‍👦</span>
+            <div class="feature-text"><strong>+500 Familias</strong>Asesoradas con éxito comprobado</div>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🗣️</span>
+            <div class="feature-text"><strong>Tu idioma</strong>Atención personalizada en español</div>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🗺️</span>
+            <div class="feature-text"><strong>Tu MAPA</strong>Plan estratégico hecho para ti</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="https://wa.me/18626228339" target="_blank" class="btn btn-whatsapp">💬 Escríbeme ahora</a>
+          <a href="#contacto" class="btn btn-outline">📅 Agenda cita</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:60px;">
+      <div class="section-tag reveal">¿Cómo funciona?</div>
+      <h2 class="section-title reveal rv1">Nuestro <span>Proceso</span></h2>
+      <p class="section-desc reveal rv2" style="margin:0 auto;">Simple, transparente y enfocado en tus resultados.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step reveal rv1"><div class="step-num">1</div><h3>Consulta Inicial</h3><p>Conversamos sobre tu situación, tus metas y necesidades específicas sin costo.</p></div>
+      <div class="step reveal rv2"><div class="step-num">2</div><h3>Tu MAPA Personalizado</h3><p>Diseñamos un plan estratégico adaptado a tu realidad y objetivos financieros.</p></div>
+      <div class="step reveal rv3"><div class="step-num">3</div><h3>Ejecutamos Juntos</h3><p>Te acompañamos paso a paso en cada trámite, documento y decisión importante.</p></div>
+      <div class="step reveal rv4"><div class="step-num">4</div><h3>Resultados Reales</h3><p>Ves el progreso en tu situación financiera, migratoria y empresarial.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="section-inner">
+    <div class="section-tag reveal">Testimonios</div>
+    <h2 class="section-title reveal rv1">Lo que dicen <span>nuestros clientes</span></h2>
+    <p class="section-desc reveal rv2">Familias y emprendedores que confiaron en MAPA y transformaron su futuro.</p>
+
+    <div class="testi-slider-wrap reveal">
+      <div class="testi-track" id="testiTrack">
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Marilyn me ayudó a organizar todos mis documentos migratorios. Gracias a ella tengo mi permiso de trabajo. ¡La recomiendo al 100%!"</p>
+          <div class="testi-author"><div class="testi-avatar">JR</div><div><div class="testi-name">José Rodríguez</div><div class="testi-loc">Newark, NJ</div></div></div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Abrí mi LLC y obtuve mi EIN en tiempo récord. Marilyn me explicó todo paso a paso. Ahora mi negocio está legalmente establecido."</p>
+          <div class="testi-author"><div class="testi-avatar">AM</div><div><div class="testi-name">Ana Martínez</div><div class="testi-loc">Elizabeth, NJ</div></div></div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Pude comprar mi primera casa gracias al plan de crédito que diseñó Marilyn. Pensé que era imposible, pero ella encontró el camino."</p>
+          <div class="testi-author"><div class="testi-avatar">CL</div><div><div class="testi-name">Carlos López</div><div class="testi-loc">Paterson, NJ</div></div></div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"El proceso de reparación de crédito fue increíble. En 6 meses mi score subió más de 100 puntos. ¡Marilyn hace milagros!"</p>
+          <div class="testi-author"><div class="testi-avatar">LG</div><div><div class="testi-name">Lucía González</div><div class="testi-loc">Jersey City, NJ</div></div></div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Marilyn nos ayudó con la petición familiar de mi esposo. Siempre estuvo disponible y respondió cada duda. ¡Excelente servicio!"</p>
+          <div class="testi-author"><div class="testi-avatar">MP</div><div><div class="testi-name">María Pérez</div><div class="testi-loc">Union City, NJ</div></div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="slider-controls">
+      <button class="slider-btn" aria-label="Anterior" id="prevBtn">&#8592;</button>
+      <div class="slider-dots" id="sliderDots"></div>
+      <button class="slider-btn" aria-label="Siguiente" id="nextBtn">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="section-tag">Contáctanos</div>
+        <h2 class="section-title" style="margin-bottom:16px;">Agenda tu<br><span>consulta hoy</span></h2>
+        <p>¿Tienes preguntas? ¿Listo para dar el primer paso? Escríbenos y te responderemos a la brevedad.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div><strong>Teléfono / WhatsApp</strong><br>
+            <a href="tel:+18626228339" style="color:rgba(255,255,255,0.6);text-decoration:none;">(862) 622-8339</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div><strong>Dirección</strong><br><span style="color:rgba(255,255,255,0.6);">20 Bloomfield Pl, Newark, NJ 07104</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div><strong>Horario</strong><br><span style="color:rgba(255,255,255,0.6);">Lun–Vie 9am–6pm · Sáb 9am–2pm</span></div>
+          </div>
+        </div>
+        <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="https://wa.me/18626228339?text=Hola%2C%20quiero%20agendar%20una%20cita." target="_blank" class="btn btn-whatsapp">💬 WhatsApp directo</a>
+          <a href="tel:+18626228339" class="btn btn-outline">📞 Llamar ahora</a>
+        </div>
+        <div class="contact-social-area">
+          <p>Síguenos en redes sociales</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61550670802804" target="_blank" rel="noopener" class="social-btn-icon social-facebook" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/marilynpaladinezusa/" target="_blank" rel="noopener" class="social-btn-icon social-instagram" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@marilynpaladinezv" target="_blank" rel="noopener" class="social-btn-icon social-tiktok" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@MarilynPaladinezOficial" target="_blank" rel="noopener" class="social-btn-icon social-youtube" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal rv2">
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" placeholder="Tu nombre" required />
+            <input type="tel" placeholder="Tu teléfono" />
+          </div>
+          <input type="email" placeholder="Tu correo electrónico" required />
+          <select>
+            <option value="" disabled selected>¿Qué servicio necesitas?</option>
+            <option>MAPA Migratorio & Notaría</option>
+            <option>MAPA Corporativo & Emprendimiento</option>
+            <option>MAPA Contable (Pre-Tax)</option>
+            <option>MAPA Marketing Digital</option>
+            <option>MAPA Protección & Crédito</option>
+            <option>MAPA Home & Wealth Building</option>
+            <option>Otro / No estoy seguro</option>
+          </select>
+          <textarea placeholder="Cuéntanos brevemente tu situación o pregunta..."></textarea>
+          <button type="submit" class="btn btn-red" style="justify-content:center;">📩 Enviar mensaje</button>
+          <p style="font-size:0.75rem;color:rgba(255,255,255,0.3);text-align:center;">O contáctanos directamente por WhatsApp al (862) 622-8339</p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✅</div>
+          <div class="success-title">¡Mensaje enviado!</div>
+          <p class="success-msg">Gracias por contactarnos. Marilyn revisará tu mensaje y se comunicará contigo muy pronto.<br>Si prefieres una respuesta inmediata, escríbenos por WhatsApp.</p>
+          <a href="https://wa.me/18626228339?text=Hola%20Marilyn%2C%20acabo%20de%20enviar%20un%20formulario." target="_blank" class="success-wa">💬 Continuar por WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAPA GOOGLE -->
+<section id="ubicacion" style="padding:60px 40px;">
+  <div class="map-inner">
+    <div class="section-tag reveal">Ubicación</div>
+    <h2 class="section-title reveal rv1">Visítanos en <span>Newark, NJ</span></h2>
+    <p class="section-desc reveal rv2">20 Bloomfield Pl, Newark, NJ 07104 — Estacionamiento disponible.</p>
+    <div class="map-wrap reveal">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9897338905!2d-74.17224768459372!3d40.76213577932678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2546b6e6b8b01%3A0x1c8bdfbf7e5d5a5!2s20%20Bloomfield%20Pl%2C%20Newark%2C%20NJ%2007104!5e0!3m2!1sen!2sus!4v1690000000000!5m2!1sen!2sus"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="MAPA Business Location">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">M<span>A</span>PA</div>
+    <p style="margin-top:6px;">Business & Financial Services LLC</p>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61550670802804" target="_blank" rel="noopener" class="social-btn-icon social-facebook" aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/marilynpaladinezusa/" target="_blank" rel="noopener" class="social-btn-icon social-instagram" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@marilynpaladinezv" target="_blank" rel="noopener" class="social-btn-icon social-tiktok" aria-label="TikTok">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@MarilynPaladinezOficial" target="_blank" rel="noopener" class="social-btn-icon social-youtube" aria-label="YouTube">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+  </div>
+  <div class="footer-links">
+    <a href="#hero">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <p>© 2026 MAPA Business & Financial Services LLC · (862) 622-8339</p>
+</footer>
+
+<script src="script/script.js"></script>
+<script>
+/* ── NAVBAR STICKY ── */
+const mainNav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  mainNav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* ── HAMBURGER ── */
+function toggleMenu() {
+  const links = document.getElementById('navLinks');
+  const burger = document.getElementById('hamburger');
+  const open = links.classList.toggle('active');
+  burger.classList.toggle('open', open);
+}
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('active');
+    document.getElementById('hamburger').classList.remove('open');
+  });
+});
+
+/* ── SCROLL REVEAL ── */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ── TESTIMONIALS SLIDER ── */
+(function(){
+  const track = document.getElementById('testiTrack');
+  const dotsWrap = document.getElementById('sliderDots');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  if (!track) return;
+
+  const cards = Array.from(track.querySelectorAll('.testimonial-card'));
+  let cur = 0, perView = 3, total, auto;
+
+  function getPer() {
+    if (window.innerWidth <= 560) return 1;
+    if (window.innerWidth <= 880) return 2;
+    return 3;
+  }
+
+  function buildDots() {
+    perView = getPer();
+    total = Math.ceil(cards.length / perView);
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 's-dot' + (i === cur ? ' active' : '');
+      d.setAttribute('aria-label', 'Página ' + (i+1));
+      d.addEventListener('click', () => { goTo(i); resetAuto(); });
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function goTo(idx) {
+    cur = ((idx % total) + total) % total;
+    const gap = 24;
+    const cardW = cards[0].offsetWidth + gap;
+    track.style.transform = `translateX(-${cur * perView * cardW}px)`;
+    dotsWrap.querySelectorAll('.s-dot').forEach((d,i) => d.classList.toggle('active', i === cur));
+  }
+
+  function resetAuto() {
+    clearInterval(auto);
+    auto = setInterval(() => goTo(cur + 1), 4800);
+  }
+
+  prevBtn.addEventListener('click', () => { goTo(cur - 1); resetAuto(); });
+  nextBtn.addEventListener('click', () => { goTo(cur + 1); resetAuto(); });
+
+  buildDots();
+  resetAuto();
+
+  let rTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(rTimer);
+    rTimer = setTimeout(() => { cur = 0; buildDots(); goTo(0); }, 200);
+  });
+})();
+
+/* ── FORM SUCCESS ── */
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  form.style.transition = 'opacity 0.3s ease';
+  form.style.opacity = '0';
+  setTimeout(() => {
+    form.style.display = 'none';
+    success.classList.add('show');
+  }, 320);
+}
+</script>
+</body>
+</html>
